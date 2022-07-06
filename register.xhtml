@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Registration</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>Authentication Page</title>
+          <meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Transit Login Form template Responsive, Login form web template,Flat Pricing tables,Flat Drop downs  Sign up Web Templates, Flat Web Templates, Login sign up Responsive web template, SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- Custom Theme files -->
+<link href="./loginresources/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="./loginresources/css/font-awesome.css" rel="stylesheet"/> <!-- Font-Awesome-Icons-CSS -->
+
+<!-- //Custom Theme files -->
+<!-- web font --> 
+<link href="//fonts.googleapis.com/css?family=Acme" rel="stylesheet"/> 
+    </h:head>
+    <h:body>
+        
+        <div class="main">
+<!--		<h1>Transit Login Form</h1>-->
+		<div class="main-w3lsrow">
+			<!-- login form -->
+			<div class="login-form login-form-left"> 
+				<div class="agile-row">
+					<h2>Registration Form</h2> 
+                                        
+					<div class="login-agileits-top"> 	
+						
+                     <h:form  prependId="false" enctype="multipart/form-data">
+                    <p>Firstname </p>
+                    <h:inputText id="fname" value="#{usersBean.firstname}" title="fname" class="fname" required="true" requiredMessage="The First Name field is required."/>
+                    <h:message for = "fname" style = "color:red" />
+                    <p>Lastname </p>
+                    <h:inputText id="lname" value="#{usersBean.lastname}" title="lName" class="lname" required="true" requiredMessage="The Last Name field is required."/>
+                    <h:message for = "lname" style = "color:red" />
+<!--                    <p>User Name </p>
+                    <h:inputText id="name" value="#{usersBean.username}" title="Name" class="name" required="true" validatorMessage="Length is less than 5 is not allowable">
+                        <f:validateLength minimum="5" maximum="10" />
+                    </h:inputText>-->
+                    <h:message for = "name" style = "color:red" />
+                    <p>Password </p>
+                    <h:inputText id="password" value="#{usersBean.password}"  class="password" title="Password" required="true" validatorMessage="Length range is 5 to 10">
+                        <f:validateLength minimum="5" maximum="10" />
+                    </h:inputText>
+                    <h:message for = "password" style = "color:red" />
+                    <p>Email </p>
+                    <h:inputText id="email" value="#{usersBean.email}" title="email" class="email" required="true" requiredMessage="The Email field is required."/>
+                    <h:message for = "email" style = "color:red" />
+                    <p>Phoneno </p>
+                    <h:inputText id="phone" value="#{usersBean.phoneno}" title="phone" class="phone" required="true" validatorMessage="The Phone field is required only 10 digits.">
+                        <f:validateLength maximum="10" minimum="10"/></h:inputText>
+                    <h:message for = "phone" style = "color:red" />
+                    <p>DOB </p>
+<!--                    <h:inputText id="dob" value="#{usersBean.DOB}" title="dob" class="dob" required="true" requiredMessage="The Name field is required."/>-->
+<!--                    <f:convertDateTime pattern="MM/dd/yyyy" type="date" />-->
+<!--                    <h:inputText id="dob" value="#{usersBean.DOB}">
+                    <f:convertDateTime pattern="MM/dd/yyyy" type="date" />
+                    </h:inputText>
+-->
+                    <p:calendar id="inline" value="#{usersBean.DOB}" mode="popup" />  
+                    <h:message for = "dob" style = "color:red" />
+                    <p>Address </p>
+                    <h:inputText id="address" value="#{usersBean.address}" title="address" class="address" required="true" requiredMessage="The Address field is required."/>
+                    <h:message for = "address" style = "color:red" />
+                    <p>Percentage 10 </p>
+                    <h:inputText id="per10" value="#{usersBean.per10th}" title="per10" class="per10" required="true" requiredMessage="The Per10 field is required."/>
+                    <h:message for = "per10" style = "color:red" />
+                    <p>Percentage 12 </p>
+                    <h:inputText id="per12" value="#{usersBean.per12th}" title="per12" class="per12" required="true" requiredMessage="The Per12 field is required."/>
+                    <h:message for = "per12" style = "color:red" />
+                    <p>Sem Aggregate </p>
+                    <h:inputText id="sem" value="#{usersBean.sem}" title="sem" class="sem" required="true" requiredMessage="The Sem Aggregate field is required."/>
+                    <h:message for = "sem" style = "color:red" />
+                     <p>Profile Picture </p>
+                     <h:inputFile value="#{usersBean.uploadedFile}"></h:inputFile>
+                    <p>Department</p>
+                    <h:selectOneMenu value="#{usersBean.did}" class="form-control" style="width: 400px; height: 30px;">
+                         <f:selectItem itemValue="0" itemLabel="Select Item"/>
+                        <f:selectItems value="#{usersBean.deptList}" var="d" itemLabel="#{d.deptName}" itemValue="#{d.deptid}"></f:selectItems>
+                    </h:selectOneMenu> 
+                    <h:commandButton value="Save" action="#{usersBean.insert()}"></h:commandButton>
+         
+            </h:form>
+        
+					
+					</div> 
+<!--					<div class="login-agileits-bottom"> 
+						<h6><a href="#">Forgot password?</a></h6>
+					</div> 
+					<div class="login-agileits-bottom1"> 
+						<h3>(or)</h3>
+
+					</div> -->
+					<div class="social_icons agileinfo">
+						<ul class="top-links">
+									<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+									<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+									<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+									<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+								</ul>
+					</div>
+                                        
+					<div class="login-agileits-bottom"> 
+                                            <h6>Allready have an Account?<a href="index.jsp">Sign In</a></h6>
+					</div> 
+ 
+				</div>  
+			</div>  
+		</div>	
+		<!-- copyright -->
+		<div class="copyright">
+<!--			<p> © 2017 Transit Login Form. All rights reserved | Design by <a href="http://w3layouts.com/" target="_blank">W3layouts</a></p>-->
+		</div>
+		<!-- //copyright --> 
+	</div>
+
+
+    </h:body>
+</html>
+
